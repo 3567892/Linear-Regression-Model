@@ -1,44 +1,34 @@
+# Import necessary libraries
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import copy,math
+import copy
+
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error,r2_score
 
-df = pd.read_csv('USA_Housing.csv')
-
+# Display the first few rows of the dataset
 df.head()
+
+# Check for missing values
+df.isnull().any()
 
 df.describe
 
-df.isnull().any()
 
-#Plotting area vs price
-plt.scatter(x= 'Area Population', y ='Price' , data = df)
-
-#formats my y-axis to disable the scientific notation. 
-plt.ticklabel_format(style ='plain',axis = 'both')
-
-#adding commas
+# Plotting area vs price
+plt.scatter(x='Area Population', y='Price', data=df)
+plt.ticklabel_format(style='plain', axis='both')
 plt.gca().get_yaxis().set_major_formatter(plt.FuncFormatter(lambda x, _: format(int(x), ',')))
-
-
-#plots titles and labels
-plt.title ('Area Population of House vs. Price of the House')
+plt.title('Area Population of House vs. Price of the House')
 plt.ylabel('Price')
 plt.xlabel('Area Population')
 plt.show()
 
-#Average number of prices vs average number of bedrooms
-plt.bar(x= df['Avg. Area Number of Bedrooms'], height=df['Price'])
-#formats my y-axis to disable the scientific notation. 
-plt.ticklabel_format(style ='plain',axis = 'both')
-
-#adding commas
+# Average number of prices vs average number of bedrooms
+plt.bar(x=df['Avg. Area Number of Bedrooms'], height=df['Price'])
+plt.ticklabel_format(style='plain', axis='both')
 plt.gca().get_yaxis().set_major_formatter(plt.FuncFormatter(lambda x, _: format(int(x), ',')))
-
-#plots titles and labels
-plt.title ('Area Population of House vs. Price of the House')
+plt.title('Area Population of House vs. Price of the House')
 plt.ylabel('Price')
 plt.xlabel('Avg. Area Number of Bedrooms')
 plt.show()
