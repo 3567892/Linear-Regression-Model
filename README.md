@@ -1,4 +1,4 @@
-This Python code is an implementation of a simple linear regression model using gradient descent for training. It is applied to the USA_Housing dataset, which presumably contains information about housing prices in the USA.
+This Python code is an implementation of a simple linear regression model using gradient descent for training. It is applied to the USA_Housing dataset, which  contains information about housing prices in the USA.
 
 Here's a brief description of the key components and functionalities of the code:
 
